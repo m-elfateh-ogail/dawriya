@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2857F7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="دوريّة">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>دوريّة — التزاماتك بوضوح</title>
+<style>
+:root{--blue:#2857F7;--blue2:#397BFF;--mint:#A8F0D0;--lav:#D8DDFE;--pink:#F2D8F8;--ink:#101A35;--muted:#77829C;--line:#E3EAF8;--bg:#F3F7FF;--glass:rgba(255,255,255,.68)}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Tahoma,Arial,sans-serif;background:radial-gradient(ellipse at 12% 8%,rgba(157,187,255,.55),transparent 32%),radial-gradient(ellipse at 94% 38%,rgba(228,193,255,.42),transparent 32%),radial-gradient(ellipse at 40% 100%,rgba(154,234,220,.42),transparent 30%),#f5f8ff;min-height:100vh;background-attachment:fixed}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:480px;min-height:100vh;margin:auto;position:relative;padding-bottom:112px;background:rgba(255,255,255,.56);box-shadow:0 0 50px rgba(36,67,145,.07)}
+header{padding:24px 20px 18px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:10px}.brand img{width:44px;height:44px;border-radius:14px;box-shadow:0 5px 14px #2857f725}.brand h1{font-size:22px;margin:0;letter-spacing:-.5px}.brand p{font-size:11px;color:var(--muted);margin:3px 0 0}.avatar{width:42px;height:42px;border:1px solid #ffffffc9;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#ffffffd9,#e6edffad);color:var(--blue);font-size:20px;box-shadow:0 5px 16px #354e8912}
+main{padding:0 18px}.hello{font-size:13px;color:var(--muted);margin:5px 0 6px}.heading{font-size:25px;font-weight:850;margin:0 0 17px;letter-spacing:-.5px;line-height:1.35}.total{background:linear-gradient(135deg,#2857F7,#397BFF);border-radius:28px;padding:21px;color:white;position:relative;overflow:hidden;box-shadow:0 15px 34px #2857f72b;border:1px solid #ffffff55}.total:after{content:"";position:absolute;width:170px;height:170px;border:1px solid #ffffff2b;border-radius:50%;left:-60px;top:-70px;box-shadow:0 0 0 22px #ffffff0b,0 0 0 44px #ffffff08}.total-label{font-size:12px;color:#e3eaff;position:relative;z-index:1}.amount{font-size:31px;font-weight:850;letter-spacing:-.8px;margin:8px 0 17px;position:relative;z-index:1}.amount small{font-size:13px;font-weight:600;letter-spacing:0}.stats{display:flex;gap:9px;position:relative;z-index:1}.stat{background:#ffffff20;border:1px solid #ffffff36;border-radius:17px;padding:12px;flex:1;backdrop-filter:blur(14px)}.stat span{font-size:10px;color:#e7edff;display:block;margin-bottom:6px}.stat strong{font-size:15px;line-height:1.4;overflow-wrap:anywhere}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin:23px 0 12px}.section-head h2{font-size:16px;margin:0;font-weight:800}.link{border:0;background:none;color:var(--blue);font-size:12px;font-weight:800;padding:5px}.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick-card{border:1px solid #ffffffd9;border-radius:21px;padding:14px;background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(244,247,255,.62));box-shadow:0 7px 22px rgba(40,66,120,.045)}.q-icon{width:36px;height:36px;border-radius:13px;display:grid;place-items:center;font-size:18px;margin-bottom:11px}.blue-bg{background:#eaf0ff;color:var(--blue)}.mint-bg{background:#e7fbf2;color:#208b65}.quick-card p{font-size:11px;color:var(--muted);margin:0 0 5px}.quick-card strong{font-size:20px}.quick-card small{font-size:10px;color:var(--muted);margin-right:3px}
+.item{display:flex;align-items:center;gap:10px;border:1px solid #ffffffd9;padding:12px;border-radius:19px;margin-bottom:9px;background:rgba(255,255,255,.73);box-shadow:0 5px 18px rgba(35,61,115,.035)}.item-icon{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;font-size:18px;background:linear-gradient(145deg,#eef3ff,#e3eaff);flex-shrink:0;color:var(--blue)}.item-info{flex:1;min-width:0}.item-info strong{font-size:13px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.item-info small{display:block;color:var(--muted);font-size:10px;margin-top:5px}.item-amount{text-align:left;white-space:nowrap}.item-amount strong{font-size:12px;display:block}.item-amount small{color:var(--muted);font-size:10px}
+/* Liquid Glass navigation */.bottom{position:fixed;bottom:calc(10px + env(safe-area-inset-bottom, 0px));left:50%;transform:translateX(-50%);width:calc(min(440px,100%) - 30px);padding:9px 10px;background:rgba(255,255,255,.48);border:1px solid rgba(255,255,255,.84);border-radius:28px;backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);box-shadow:0 12px 38px rgba(30,54,110,.16),inset 0 1px 0 rgba(255,255,255,.95);display:flex;justify-content:space-around;align-items:center;z-index:9999;isolation:isolate}.nav{border:0;background:transparent;color:#818ca6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:9px;min-width:49px;min-height:45px;border-radius:19px;transition:all .2s}.nav span{font-size:19px;line-height:1}.nav.active{color:var(--blue);font-weight:850;background:rgba(255,255,255,.77);box-shadow:0 3px 12px rgba(38,69,140,.09),inset 0 0 0 1px rgba(255,255,255,.9)}.nav.addnav{background:var(--blue);color:white;min-width:47px;min-height:47px;border-radius:17px;font-size:0;box-shadow:0 7px 18px #2857f747}.nav.addnav span{font-size:26px}.fab{display:none}
+.screen{display:none}.screen.active{display:block}.empty{border:1px dashed #cfdbf5;background:rgba(255,255,255,.45);border-radius:20px;padding:22px;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}.form-card{border:1px solid #ffffffd9;border-radius:23px;padding:16px;margin-bottom:18px;background:rgba(255,255,255,.68);box-shadow:0 8px 24px rgba(35,61,115,.045)}.field{margin-bottom:13px}.field label{display:block;font-size:11px;font-weight:800;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #dce5f7;border-radius:14px;padding:13px;background:rgba(255,255,255,.74);outline-color:var(--blue);color:var(--ink)}.type-row{display:flex;gap:8px}.type-btn{flex:1;border:1px solid var(--line);background:#ffffff9c;border-radius:13px;padding:11px;color:var(--muted)}.type-btn.chosen{border-color:#b8c9ff;background:#eaf0ff;color:var(--blue);font-weight:850}.primary{width:100%;border:0;border-radius:16px;padding:14px;background:linear-gradient(135deg,#397bff,#2857f7);color:#fff;font-weight:850;box-shadow:0 8px 18px #2857f72c}.secondary{width:100%;border:1px solid #dce5f7;border-radius:15px;padding:13px;background:#ffffff9c;color:var(--blue);font-weight:750;margin-top:9px}.page-title{font-size:22px;font-weight:850;margin:9px 0 17px}.note{font-size:10px;color:var(--muted);line-height:1.8;margin-top:12px}.assistant-card{background:linear-gradient(135deg,rgba(234,240,255,.9),rgba(249,239,255,.7));border:1px solid #ffffffd9;border-radius:22px;padding:17px;line-height:1.8;font-size:13px}.prompt{display:block;width:100%;text-align:right;border:1px solid #ffffffd9;border-radius:15px;background:#ffffffa6;padding:13px;margin:9px 0;color:var(--ink)}
+.auth-hero{text-align:center;padding:20px 6px 24px}.auth-hero img{width:82px;height:82px;border-radius:25px;box-shadow:0 10px 24px #2857f72b}.auth-hero h2{font-size:25px;margin:12px 0 5px}.auth-hero p{font-size:12px;color:var(--muted);margin:0}.auth-switch{display:flex;background:#e9effc99;padding:4px;border-radius:15px;gap:4px;margin-bottom:17px}.auth-switch button{flex:1;border:0;border-radius:12px;padding:11px;background:transparent;color:var(--muted);font-size:12px;font-weight:800}.auth-switch button.chosen{background:#fff;color:var(--blue);box-shadow:0 3px 10px #233b7010}.auth-foot{text-align:center;color:var(--muted);font-size:11px;margin-top:14px}.auth-foot button{border:0;background:none;color:var(--blue);font-weight:800}.profile-row{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;background:#ffffffa6;border:1px solid #ffffffd9;margin-bottom:9px}.profile-row .picon{width:37px;height:37px;border-radius:13px;display:grid;place-items:center;background:#eaf0ff;color:var(--blue);font-size:17px}.profile-row .grow{flex:1}.profile-row small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+@media(min-width:481px){body{padding:20px 0}.app{border-radius:30px;overflow:hidden;min-height:calc(100vh - 40px)}.bottom{bottom:28px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand"><img src="apple-touch-icon.png" alt=""><div><h1>دوريّة</h1><p>التزاماتك بوضوح</p></div></div>
+  <button class="avatar" onclick="showScreen('account')" aria-label="الحساب">♙</button>
+</header>
+<main>
+<section id="home" class="screen active">
+  <p class="hello">أهلًا بيك 👋</p><h2 class="heading">خلّيك عارف الجاي عليك</h2>
+  <div class="total"><div class="total-label">إجمالي الالتزامات المسجلة</div><div class="amount" id="totalAmount">0 <small>ر.س</small></div><div class="stats"><div class="stat"><span>اشتراكات شهرية</span><strong id="subAmount">0 ر.س</strong></div><div class="stat"><span>أقساط متبقية</span><strong id="installAmount">0 ر.س</strong></div></div></div>
+  <div class="section-head"><h2>تجهيزات الشهر</h2><span class="link" id="monthLabel"></span></div><div id="monthlyReserve" class="quick"></div><p class="note">إجمالي مستقل لكل عملة — ملخص الشهر يعرض ما يُفضّل تجهيزه للاستحقاقات القادمة.</p><div class="section-head"><h2>ملخص سريع</h2></div>
+  <div class="quick"><div class="quick-card"><div class="q-icon blue-bg">↻</div><p>اشتراكات نشطة</p><strong id="subCount">0</strong><small>اشتراك</small></div><div class="quick-card"><div class="q-icon mint-bg">▤</div><p>أقساط مسجلة</p><strong id="installCount">0</strong><small>التزام</small></div></div>
+  <div class="section-head"><h2>أقرب الاستحقاقات</h2><button class="link" onclick="showScreen('commitments')">عرض الكل</button></div>
+  <div id="upcoming"></div>
+  <p class="note">نسخة تجريبية: تُحفظ البيانات في هذا المتصفح فقط. الحسابات الحقيقية والإشعارات التلقائية لم تُفعّل بعد.</p>
+</section>
+<section id="commitments" class="screen">
+  <h2 class="page-title">التزاماتي</h2><div id="allItems"></div>
+  <button class="primary" onclick="showScreen('add')">＋ إضافة التزام</button>
+</section>
+<section id="add" class="screen">
+  <h2 class="page-title">إضافة التزام</h2>
+  <div class="form-card">
+    <div class="field"><label>اسم الالتزام</label><input id="name" placeholder="مثلاً: iCloud أو قسط السيارة"></div>
+    <div class="field"><label>نوع الالتزام</label><div class="type-row"><button class="type-btn chosen" data-type="sub" onclick="chooseType('sub',this)">اشتراك</button><button class="type-btn" data-type="install" onclick="chooseType('install',this)">قسط</button></div></div>
+    <div class="field"><label>المبلغ</label><input id="amount" type="number" min="0" step="0.01" placeholder="0.00"></div><div class="field"><label>العملة</label><select id="currency"><option value="SAR">ريال سعودي (ر.س)</option><option value="EGP">جنيه مصري (ج.م)</option><option value="USD">دولار أمريكي ($)</option></select></div>
+    <div class="field"><label>تاريخ الاستحقاق القادم</label><input id="due" type="date"></div>
+    <div class="field"><label>التكرار</label><select id="cycle"><option value="شهري">شهري</option><option value="سنوي">سنوي</option><option value="أسبوعي">أسبوعي</option><option value="مرة واحدة">مرة واحدة</option></select></div>
+    <div id="installFields" style="display:none"><div class="field"><label>عدد الأقساط الكلي</label><input id="installTotal" type="number" min="1" placeholder="مثلاً: 12"></div><div class="field"><label>الأقساط المدفوعة</label><input id="installPaid" type="number" min="0" value="0"></div></div>
+    <button class="primary" onclick="saveItem()">حفظ الالتزام</button><button class="secondary" onclick="showScreen('commitments')">إلغاء</button>
+  </div><p class="note">التذكيرات والتقاط البيانات من الصور قيد التطوير؛ أضف بيانات تجريبية الآن لاختبار شكل التطبيق.</p>
+</section>
+<section id="calendar" class="screen">
+  <h2 class="page-title">التقويم</h2><div class="assistant-card">هنا حتظهر مواعيد الاشتراكات والأقساط مرتبة حسب تاريخ الاستحقاق. إضافة الأحداث لتقويم Apple ستُضاف في خطوة لاحقة.</div><div class="section-head"><h2>المواعيد القادمة</h2></div><div id="calendarItems"></div>
+</section>
+<section id="assistant" class="screen">
+  <h2 class="page-title">مساعد دوريّة</h2><div class="assistant-card"><strong>خلينا نفهم التزاماتك سوا.</strong><br>المساعد هنا تجريبي حاليًا؛ ما متصل بذكاء اصطناعي بعد. لاحقًا تقدر تسأله عن الاشتراكات القادمة وكيف ترتب دفعاتك.</div>
+  <div class="section-head"><h2>جرّب تسأل</h2></div>
+  <button class="prompt" onclick="answer('شنو أقرب دفعة علي؟')">شنو أقرب دفعة علي؟</button><button class="prompt" onclick="answer('كم إجمالي التزاماتي المسجلة؟')">كم إجمالي التزاماتي المسجلة؟</button><button class="prompt" onclick="answer('وريني اشتراكاتي')">وريني اشتراكاتي</button><div id="answerBox"></div>
+</section>
+
+<section id="account" class="screen">
+  <h2 class="page-title">حسابك في دوريّة</h2>
+  <div class="assistant-card" style="margin-bottom:14px">سجّل دخولك أو أنشئ حسابًا عشان نجهّز تجربة الحساب والمزامنة مستقبلًا.</div>
+  <div class="profile-row"><div class="picon">♙</div><div class="grow"><strong id="profileName">ضيف دوريّة</strong><small id="profileEmail">لم تسجّل الدخول</small></div><span style="color:var(--blue)">›</span></div>
+  <button class="primary" onclick="showScreen('auth')">تسجيل الدخول / إنشاء حساب</button>
+  <div class="section-head"><h2>تفضيلاتك</h2></div>
+  <button class="profile-row" style="width:100%;text-align:right;color:inherit" onclick="showScreen('calendar')"><span class="picon">▦</span><span class="grow">التقويم والتذكيرات<small>مواصفات التنبيهات الشهرية</small></span><span>›</span></button>
+  <button class="profile-row" style="width:100%;text-align:right;color:inherit" onclick="showScreen('commitments')"><span class="picon">▤</span><span class="grow">إدارة الالتزامات<small>اشتراكات وأقساط متعددة العملات</small></span><span>›</span></button>
+  <p class="note">تسجيل الدخول في هذه النسخة واجهة تجريبية فقط؛ لا ترسل كلمة مرور حقيقية. سنربطها بخدمة مصادقة آمنة قبل تفعيل الحسابات.</p>
+</section>
+<section id="auth" class="screen">
+  <button class="link" onclick="showScreen('account')">← رجوع</button>
+  <div class="auth-hero"><img src="apple-touch-icon.png" alt="شعار دوريّة"><h2>دوريّة</h2><p>كل التزاماتك بوضوح</p></div>
+  <div class="auth-switch"><button id="loginTab" class="chosen" onclick="setAuthMode('login')">تسجيل الدخول</button><button id="signupTab" onclick="setAuthMode('signup')">إنشاء حساب</button></div>
+  <div class="form-card">
+    <div class="field" id="fullNameField" style="display:none"><label>الاسم الكامل</label><input id="authName" autocomplete="name" placeholder="اكتب اسمك"></div>
+    <div class="field"><label>البريد الإلكتروني</label><input id="authEmail" type="email" autocomplete="email" placeholder="name@example.com"></div>
+    <div class="field"><label>كلمة المرور</label><input id="authPassword" type="password" autocomplete="current-password" placeholder="8 أحرف على الأقل"></div>
+    <button class="primary" id="authSubmit" onclick="demoAuth()">تسجيل الدخول</button>
+    <p class="auth-foot" id="authMessage">هذه شاشة تجريبية؛ الحسابات الحقيقية لم تُفعّل بعد.</p>
+  </div>
+  <p class="note">حماية بياناتك مهمة: لا تستخدم كلمة مرورك الأساسية هنا قبل ربط خدمة تسجيل دخول حقيقية.</p>
+</section>
+
+</main>
+<button class="fab" onclick="showScreen('add')" aria-label="إضافة">＋</button>
+<nav class="bottom" aria-label="التنقل الرئيسي"><button class="nav active" data-screen="home" onclick="showScreen('home')"><span>⌂</span>الرئيسية</button><button class="nav" data-screen="commitments" onclick="showScreen('commitments')"><span>▤</span>التزاماتي</button><button class="nav addnav" data-screen="add" onclick="showScreen('add')"><span>＋</span></button><button class="nav" data-screen="calendar" onclick="showScreen('calendar')"><span>▦</span>التقويم</button><button class="nav" data-screen="account" onclick="showScreen('account')"><span>♙</span>حسابي</button></nav>
+</div>
+<script>
+let items = JSON.parse(localStorage.getItem('dawriya-items') || '[]');
+let selectedType = 'sub';
+const fmt = n => new Intl.NumberFormat('ar-SA',{maximumFractionDigits:2}).format(n||0); const currencyLabel=c=>({SAR:'ر.س',EGP:'ج.م',USD:'$'}[c||'SAR']||c); const money=x=>`${fmt(x.amount)} ${currencyLabel(x.currency)}`; const monthName=new Intl.DateTimeFormat('ar-SA',{month:'long',year:'numeric'}).format(new Date());
+const today = new Date(); document.getElementById('due').value = new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+function showScreen(id){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.screen===id));document.querySelector('.fab').style.display='none';render();window.scrollTo(0,0)}
+function chooseType(t,btn){selectedType=t;document.querySelectorAll('.type-btn').forEach(x=>x.classList.toggle('chosen',x===btn));document.getElementById('installFields').style.display=t==='install'?'block':'none';document.getElementById('cycle').value=t==='install'?'مرة واحدة':'شهري'}
+function saveItem(){const name=document.getElementById('name').value.trim(),amount=Number(document.getElementById('amount').value),due=document.getElementById('due').value;if(!name||!amount||amount<0||!due){alert('أدخل الاسم والمبلغ وتاريخ الاستحقاق.');return}const total=Number(document.getElementById('installTotal').value)||0,paid=Number(document.getElementById('installPaid').value)||0;items.push({id:Date.now(),name,type:selectedType,amount,currency:document.getElementById('currency')?.value||'SAR',due,cycle:document.getElementById('cycle').value,total,paid});localStorage.setItem('dawriya-items',JSON.stringify(items));document.getElementById('name').value='';document.getElementById('amount').value='';showScreen('commitments')}
+function itemHTML(x){const d=new Date(x.due+'T12:00:00');const date=d.toLocaleDateString('ar-SA',{day:'numeric',month:'short'});return `<div class="item"><div class="item-icon">${x.type==='sub'?'↻':'▤'}</div><div class="item-info"><strong>${escapeHTML(x.name)}</strong><small>${x.type==='sub'?'اشتراك':'قسط'} · ${date}${x.type==='install'&&x.total?` · متبقي ${Math.max(0,x.total-x.paid)} من ${x.total}`:''}</small></div><div class="item-amount"><strong>${money(x)}</strong><small>${x.cycle}</small></div></div>`}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){
+const subs=items.filter(x=>x.type==='sub'),ins=items.filter(x=>x.type==='install');
+const currs=[...new Set(items.map(x=>x.currency||'SAR'))];
+const totalEl=document.getElementById('totalAmount');totalEl.innerHTML=currs.length===0?'0 <small>—</small>':currs.length===1?`${fmt(items.reduce((a,x)=>a+x.amount,0))} <small>${currencyLabel(currs[0])}</small>`:'<small>الإجماليات مفصولة حسب العملة</small>';
+document.getElementById('subAmount').textContent=subs.length?`${fmt(subs.reduce((a,x)=>a+x.amount,0))} ${currencyLabel(subs[0].currency||'SAR')}${new Set(subs.map(x=>x.currency||'SAR')).size>1?' + عملات أخرى':''}`:'0';
+document.getElementById('installAmount').textContent=ins.length?`${fmt(ins.reduce((a,x)=>a+x.amount*Math.max(0,(x.total||1)-(x.paid||0)),0))} ${currencyLabel(ins[0].currency||'SAR')}${new Set(ins.map(x=>x.currency||'SAR')).size>1?' + عملات أخرى':''}`:'0';
+document.getElementById('subCount').textContent=subs.length;document.getElementById('installCount').textContent=ins.length;
+const ml=document.getElementById('monthLabel');if(ml)ml.textContent=monthName;
+const now=new Date(),due=items.filter(x=>{const d=new Date(x.due+'T12:00:00');return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear()});const totals={};due.forEach(x=>{const c=x.currency||'SAR';if(x.type!=='install'||!x.total||x.paid<x.total)totals[c]=(totals[c]||0)+x.amount});
+const mr=document.getElementById('monthlyReserve');if(mr)mr.innerHTML=Object.keys(totals).length?Object.entries(totals).map(([c,v])=>`<div class="quick-card"><div class="q-icon blue-bg">◷</div><p>${currencyLabel(c)} · المطلوب تجهيزه</p><strong>${fmt(v)}</strong><small>${currencyLabel(c)}</small></div>`).join(''):'<div class="empty" style="grid-column:1/-1">ما في استحقاقات مسجلة في الشهر الحالي.</div>';
+const sorted=[...items].sort((a,b)=>a.due.localeCompare(b.due));document.getElementById('upcoming').innerHTML=sorted.slice(0,3).map(itemHTML).join('')||'<div class="empty">ما عندك التزامات مسجلة لسه.<br>اضغط + وسجّل أول اشتراك أو قسط.</div>';document.getElementById('allItems').innerHTML=sorted.map(x=>itemHTML(x)+`<button class="link" onclick="removeItem(${x.id})">حذف</button>`).join('')||'<div class="empty">أضف أول التزاماتك عشان تظهر هنا.</div>';document.getElementById('calendarItems').innerHTML=sorted.map(itemHTML).join('')||'<div class="empty">لسه ما في مواعيد. أضف التزاماتك أولًا.</div>';
+}
+function removeItem(id){if(confirm('تحذف الالتزام ده؟')){items=items.filter(x=>x.id!==id);localStorage.setItem('dawriya-items',JSON.stringify(items));render()}}
+function answer(q){let s='';if(q.includes('أقرب')){const x=[...items].sort((a,b)=>a.due.localeCompare(b.due))[0];s=x?`أقرب استحقاق مسجل: ${x.name} بتاريخ ${x.due} بمبلغ ${fmt(x.amount)} ريال.`:'ما عندك التزامات مسجلة لسه.'}else if(q.includes('إجمالي'))s=`إجمالي مبالغ الالتزامات المسجلة: ${fmt(items.reduce((a,x)=>a+x.amount,0))} ريال.`;else s=items.filter(x=>x.type==='sub').map(x=>`${x.name}: ${fmt(x.amount)} ريال`).join('، ')||'ما عندك اشتراكات مسجلة لسه.';document.getElementById('answerBox').innerHTML='<div class="assistant-card" style="margin-top:12px">'+escapeHTML(s)+'</div>'}
+function setAuthMode(mode){const signup=mode==='signup';document.getElementById('loginTab').classList.toggle('chosen',!signup);document.getElementById('signupTab').classList.toggle('chosen',signup);document.getElementById('fullNameField').style.display=signup?'block':'none';document.getElementById('authSubmit').textContent=signup?'إنشاء حساب':'تسجيل الدخول';document.getElementById('authMessage').textContent=signup?'واجهة إنشاء الحساب تجريبية فقط؛ لا تدخل كلمة مرور حقيقية.':'هذه شاشة تجريبية؛ الحسابات الحقيقية لم تُفعّل بعد.';}
+function demoAuth(){const email=document.getElementById('authEmail').value.trim();const signup=document.getElementById('signupTab').classList.contains('chosen');if(!email||!email.includes('@')){alert('اكتب بريدًا إلكترونيًا صحيحًا للتجربة.');return}if(signup){const name=document.getElementById('authName').value.trim()||'مستخدم دوريّة';document.getElementById('profileName').textContent=name;}document.getElementById('profileEmail').textContent=email;document.getElementById('authMessage').textContent='تم تحديث بيانات العرض التجريبي محليًا فقط. لم يتم إنشاء حساب حقيقي.';setTimeout(()=>showScreen('account'),700);}
+render();
+</script>
+</body></html>
