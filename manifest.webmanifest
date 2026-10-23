@@ -4,8 +4,9 @@
   "lang": "ar",
   "dir": "rtl",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#FFFFFF",
+  "background_color": "#F3F7FF",
   "theme_color": "#2857F7",
   "icons": [
     {
